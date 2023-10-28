@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 0; */
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --toronto-bg: #000000;
+    --memphis-bg: #5d76a9;
+    --miami-bg: #98002e;
+    --utah-bg: #002b5c;
+    --minnesota-bg: #0c2340;
+    --phoenix-bg: #1d1160;
+    --cleveland-bg: #860038;
+
+    --toronto-pill: #ce1141;
+    --memphis-pill: #12173F;
+    --miami-pill: #F9A01B;
+    --utah-pill: #00471B;
+    --minnesota-pill: #236192;
+    --phoenix-pill: #e56020;
+    --cleveland-pill: #041E42;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 100px;
+}
+
+#cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 26px;
+}
+
+#cards .card {
+    width: calc(25% - 23px);
+    /* background-image: linear-gradient(-45deg, #777777, #dedede); */
+    border-radius: 10px;
+    border: 4px solid #00000020;
+}
+
+#cards .card .card-image {
+    position: relative;
+}
+
+#cards .card .card-image .card-pill {
+    font-size: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 4px;
+    border-radius: 4px;
+    color: #ffffff;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    /* background-color: var(attr('color-pill' color)); */
+}
+
+#cards .card .card-image .card-pill[time="toronto"] {
+    background-color: var(--toronto-pill);
+}
+
+#cards .card .card-image .card-pill[time="memphis"] {
+    background-color: var(--memphis-pill);
+}
+
+#cards .card .card-image .card-pill[time="miami"] {
+    background-color: var(--miami-pill);
+}
+
+#cards .card .card-image .card-pill[time="utah"] {
+    background-color: var(--utah-pill);
+}
+
+#cards .card .card-image .card-pill[time="minnesota"] {
+    background-color: var(--minnesota-pill);
+}
+
+#cards .card .card-image .card-pill[time="phoenix"] {
+    background-color: var(--phoenix-pill);
+}
+
+#cards .card .card-image .card-pill[time="cleveland"] {
+    background-color: var(--cleveland-pill);
+}
+
+#cards .card .card-image img {
+    /* background-color: red; */
+    width: 100%;
+    display: block;
+    padding: 36px 16px 0 16px;
+}
+
+#cards .card .card-image img[time="toronto"] {
+    background-color: var(--toronto-bg);
+}
+
+#cards .card .card-image img[time="memphis"] {
+    background-color: var(--memphis-bg);
+}
+
+#cards .card .card-image img[time="miami"] {
+    background-color: var(--miami-bg);
+}
+
+#cards .card .card-image img[time="utah"] {
+    background-color: var(--utah-bg);
+}
+
+#cards .card .card-image img[time="minnesota"] {
+    background-color: var(--minnesota-bg);
+}
+
+#cards .card .card-image img[time="phoenix"] {
+    background-color: var(--phoenix-bg);
+}
+
+#cards .card .card-image img[time="cleveland"] {
+    background-color: var(--cleveland-bg);
+}
+
+#cards .card .card-content {
+    padding: 16px;
+
+}
+
+@media screen and (max-width: 769px) {
+    body {
+        padding: 50px;
+    }
+
+    #cards .card {
+        width: calc(50% - 13px);
+    }
+}
+
+@media screen and (max-width: 481px) {
+    body {
+        padding: 50px;
+    }
+
+    #cards .card {
+        width: calc(100% - 13px);
+    }
+}
+
+@media print {
+    body {
+        position: relative;
+    }
+    body::after {
+        content: "SEM VALOR";
+        font-size: 180px;
+        font-weight: bold;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        opacity: .2;
+    }
+    #cards .card .card-image img {
+        filter: grayscale(1);
+    }
+    #cards .card .card-content a {
+        display: none;
+    }
+}
